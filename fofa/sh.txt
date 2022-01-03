@@ -1,0 +1,7 @@
+
+
+time for i in $(cat root.txt); do python3 fofa.py -q 'cert="'$i'"' ;done | tee -a fofa.1.out
+
+time for i in $(cat root.txt); do python3 fofa.py -q '"'$i'"' ;done | tee -a fofa.2.out
+
+time for i in $(cat root.txt); do echo $i; python3 fofa.py -q '"'$i'"' | wc -l;done | tee -a fofa.1.log
